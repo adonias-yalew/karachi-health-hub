@@ -8,8 +8,8 @@ import { ArrowLeft, Clock, CheckCircle2, Calendar } from "lucide-react";
 import { services, packages } from "@/data/content";
 
 export default function ServiceDetailPage() {
-  const { serviceId } = useParams();
-  const service = services.find((s) => s.id === serviceId);
+  const { slug } = useParams();
+  const service = services.find((s) => s.id === slug);
 
   if (!service) {
     return (
