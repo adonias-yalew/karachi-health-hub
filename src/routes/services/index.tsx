@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, CheckCircle2 } from "lucide-react";
 import { services } from "@/data/content";
+import logo from "@/assets/logo.jpg";
 
 export default function ServicesPage() {
   return (
@@ -19,7 +20,8 @@ export default function ServicesPage() {
               <p className="text-xs uppercase tracking-[0.22em] text-primary">
                 What we offer
               </p>
-              <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-ink">
+              <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-ink flex items-center justify-center gap-3">
+                <img src={logo} alt="Karachi Health Care" className="h-10 w-10 rounded-full object-cover" />
                 Our Services
               </h1>
               <p className="mt-4 text-muted-foreground">
