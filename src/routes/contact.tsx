@@ -155,7 +155,7 @@ export default function ContactPage() {
               {/* Map */}
               <Card className="overflow-hidden rounded-2xl border-brand/20">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5!2d38.8!3d9.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMDAnMDAuMCJOIDM4wrA0OCcwMC4wIkU!5e0!3m2!1sen!2set!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5!2d38.7867969!3d8.9624299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a49c2d1c91%3A0x22168d27906d807e!2sKarachi+Healthcare!5e0!3m2!1sen!2set!4v1234567890"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
