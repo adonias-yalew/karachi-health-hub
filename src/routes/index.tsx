@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -15,26 +14,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { TrustBadges } from "@/components/sections/TrustBadges";
 import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Karachi Healthcare — Trusted Physiotherapy & Wellness Clinic in Addis Ababa" },
-      {
-        name: "description",
-        content:
-          "Karachi Healthcare offers expert physiotherapy, rehabilitation and wellness care in Addis Ababa, Ethiopia. Book a consultation with certified specialists today.",
-      },
-      { property: "og:title", content: "Karachi Healthcare — Physiotherapy & Wellness Clinic" },
-      {
-        property: "og:description",
-        content: "Providing you the best healthcare services. Restore mobility, relieve pain and feel like yourself again with Karachi Healthcare.",
-      },
-    ],
-  }),
-  component: Home,
-});
-
-function Home() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

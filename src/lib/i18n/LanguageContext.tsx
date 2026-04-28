@@ -9,15 +9,17 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("language") as Language;
-      if (saved && ["en", "am", "om"].includes(saved)) {
-        return saved;
-      }
+  // Start with "en" for SSR hydration match, then sync with localStorage on client
+  const [language, setLanguageState] = useState<Language>("en");
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    const saved = localStorage.getItem("language") as Language;
+    if (saved && ["en", "am", "om"].includes(saved)) {
+      setLanguageState(saved);
     }
-    return "en";
-  });
+  }, []);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -26,6 +28,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  // Prevent hydration mismatch by not rendering children until client sync is done
+  // or accept the brief flash of English before localStorage loads
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
       {children}

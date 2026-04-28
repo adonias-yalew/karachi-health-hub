@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
@@ -6,20 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Sparkles, HelpCircle, Shield, Clock } from "lucide-react";
 import { packages, insurers } from "@/data/content";
-
-export const Route = createFileRoute("/pricing")({
-  head: () => ({
-    meta: [
-      { title: "Pricing & Packages - Karachi Healthcare" },
-      {
-        name: "description",
-        content:
-          "Transparent pricing for physiotherapy services in Addis Ababa. Single sessions, recovery plans, and wellness memberships available.",
-      },
-    ],
-  }),
-  component: PricingPage,
-});
 
 const faqs = [
   {
@@ -40,7 +25,7 @@ const faqs = [
   },
 ];
 
-function PricingPage() {
+export default function PricingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

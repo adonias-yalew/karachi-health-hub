@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
@@ -15,20 +14,6 @@ import {
   Clock,
 } from "lucide-react";
 import heroImg from "@/assets/hero-clinic.jpg";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us - Karachi Healthcare" },
-      {
-        name: "description",
-        content:
-          "Learn about Karachi Healthcare, Addis Ababa's trusted physiotherapy clinic. Our mission, values, and expert team dedicated to your recovery.",
-      },
-    ],
-  }),
-  component: AboutPage,
-});
 
 const values = [
   {
@@ -53,7 +38,7 @@ const values = [
   },
 ];
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

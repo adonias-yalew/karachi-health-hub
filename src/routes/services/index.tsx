@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
@@ -7,21 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, CheckCircle2 } from "lucide-react";
 import { services } from "@/data/content";
 
-export const Route = createFileRoute("/services/")({
-  head: () => ({
-    meta: [
-      { title: "Our Services - Karachi Healthcare" },
-      {
-        name: "description",
-        content:
-          "Comprehensive physiotherapy services in Addis Ababa. Orthopedic therapy, sports rehab, neuro physiotherapy, pediatric care and more.",
-      },
-    ],
-  }),
-  component: ServicesPage,
-});
-
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

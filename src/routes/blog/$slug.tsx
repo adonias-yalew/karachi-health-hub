@@ -1,4 +1,4 @@
-import { createFileRoute, useParams } from "@tanstack/react-router";
+import { useParams } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
@@ -7,24 +7,8 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, Calendar, User, Clock, Share2 } from "lucide-react";
 import { blogPosts } from "@/data/content";
 
-export const Route = createFileRoute("/blog/$slug")({
-  head: ({ params }) => {
-    const post = blogPosts.find((p) => p.id === params.slug);
-    return {
-      meta: [
-        { title: `${post?.title || "Article"} - Karachi Healthcare Blog` },
-        {
-          name: "description",
-          content: post?.excerpt || "Health insights from our expert team.",
-        },
-      ],
-    };
-  },
-  component: BlogPostPage,
-});
-
-function BlogPostPage() {
-  const { slug } = useParams({ from: "/blog/$slug" });
+export default function BlogPostPage() {
+  const { slug } = useParams();
   const post = blogPosts.find((p) => p.id === slug);
 
   if (!post) {

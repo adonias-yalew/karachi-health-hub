@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
@@ -7,21 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import { blogPosts } from "@/data/content";
 
-export const Route = createFileRoute("/blog/")({
-  head: () => ({
-    meta: [
-      { title: "Health Blog - Karachi Healthcare" },
-      {
-        name: "description",
-        content:
-          "Expert health tips and insights from our physiotherapy specialists in Addis Ababa. Learn about injury prevention, rehabilitation, and wellness.",
-      },
-    ],
-  }),
-  component: BlogPage,
-});
-
-function BlogPage() {
+export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

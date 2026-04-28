@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -19,21 +18,7 @@ import {
 } from "lucide-react";
 import { contactInfo } from "@/data/content";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Us - Karachi Healthcare" },
-      {
-        name: "description",
-        content:
-          "Get in touch with Karachi Healthcare in Addis Ababa. Book appointments, ask questions, or visit our clinic at Bulbula 93 Mazoria.",
-      },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {

@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -10,21 +9,7 @@ import { CheckCircle2, CalendarDays, Clock, User, Phone, Mail, FileText } from "
 import { services, timeSlots, packages } from "@/data/content";
 import { format } from "date-fns";
 
-export const Route = createFileRoute("/booking")({
-  head: () => ({
-    meta: [
-      { title: "Book Appointment - Karachi Healthcare" },
-      {
-        name: "description",
-        content:
-          "Book your physiotherapy appointment online. Choose your service, date, and time. Same-day appointments available.",
-      },
-    ],
-  }),
-  component: BookingPage,
-});
-
-function BookingPage() {
+export default function BookingPage() {
   const [step, setStep] = useState(1);
   const [date, setDate] = useState<Date>();
   const [selectedService, setSelectedService] = useState("");

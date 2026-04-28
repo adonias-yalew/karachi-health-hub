@@ -1,4 +1,4 @@
-import { createFileRoute, useParams } from "@tanstack/react-router";
+import { useParams } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
@@ -7,24 +7,8 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, Clock, CheckCircle2, Calendar } from "lucide-react";
 import { services, packages } from "@/data/content";
 
-export const Route = createFileRoute("/services/$serviceId")({
-  head: ({ params }) => {
-    const service = services.find((s) => s.id === params.serviceId);
-    return {
-      meta: [
-        { title: `${service?.title || "Service"} - Karachi Healthcare` },
-        {
-          name: "description",
-          content: service?.desc || "Professional physiotherapy services in Addis Ababa.",
-        },
-      ],
-    };
-  },
-  component: ServiceDetailPage,
-});
-
-function ServiceDetailPage() {
-  const { serviceId } = useParams({ from: "/services/$serviceId" });
+export default function ServiceDetailPage() {
+  const { serviceId } = useParams();
   const service = services.find((s) => s.id === serviceId);
 
   if (!service) {
