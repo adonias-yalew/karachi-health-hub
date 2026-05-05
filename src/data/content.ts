@@ -116,7 +116,7 @@ export const services: Service[] = [
 export const team: TeamMember[] = [
   {
     img: doc1,
-    name: "Dr. Ahmed Raza",
+    name: "Dr Abdulkerim",
     role: "Emergency Medicine Specialist",
     bio: "15+ years of experience in emergency and critical care medicine. Trained in advanced trauma life support.",
     specialties: ["Emergency Care", "Trauma Management", "Critical Care"],
